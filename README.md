@@ -209,16 +209,6 @@ Na imagem abaixo é apresentado a saída do filtro passa-altas e passa-baixas ca
 
 Neste estágio realiza-se a amplificação final do sinal juntamente com a retificação deste, visto que o sinal será convertido para um sinal digital. Além disso, este estágio permite ajuste do ganho, tendo então um valor entre 47 e 147 proximadamente concretizando um ganho máximo de 750 ou 57.2 db.
 
-<p align="center">
-  <img width="500px" src=".github/amplifier_circuit.png">
-</p>
-
-**Simulação**
-
-<p align="center">
-  <img width="500px" src=".github/amplifier_simulation.png">
-</p>
-
 **Modelagem**
 
 Para obter o ganho descrido anteriormente, basta ecolher arbitrariamente um dos resistores R1 ou R2. Lembrando que R2 = R2' + R3.
@@ -245,7 +235,41 @@ Por fim, calcula-se R2:
 ```
 Por fim utilizando um potenciômetro de 100k Ohms e um resistor de 47k Ohms , é obtido um valor próximo ao desejado.
 
+<p align="center">
+  <img width="500px" src=".github/amplifier_circuit.png">
+  <p align="center">Figura L. Estágio final de amplificação e retificação do sinal</p>
+</p>
+
+
 **Retificação**
+
+Por fim, o circuito apresenta um estágio de retificação do sinal como um fitlro de onda completa: 
+
+<p align="center">
+  <img width="500px" src=".github/full_wave_filter.png">
+  <p align="center">Figura L. Filtro de onda completa (Fonte: <a>Malvino</a>, página 105 vol. 1)</p>
+</p>
+
+```
+Vr = I/fC
+
+# onde
+Vr = ondulação de pico a pico
+I = corrente CC na carga
+f = frequência da ondulação
+C = capacitância
+```
+
+**Simulação**
+
+Na figura abaixo é apresentado a saída do estágio de amplificação juntamente com a retificação da senoide.
+
+<p align="center">
+  <img width="500px" src=".github/amplifier_simulation.png">
+  <p align="center">Figura L. Simulação do circuito de amplificação</p>
+</p>
+
+
 
 ## Interface gráfica 
 <!-- Demonstrar o funcionamento da interface -->

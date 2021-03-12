@@ -6,6 +6,9 @@
 #include <QDialog>
 #include <QSerialPort>
 #include <QMessageBox>
+#include <QFile> // Lib para leitura de arquivos
+#include <QTextStream> // Lib para escrita de arquivos
+#include <QDir>
 
 #include <QtGui>
 #include <QtWidgets>
@@ -36,6 +39,10 @@ private slots:
 
     // Lê os dados da porta serial
     void readSerial();
+    void on_exportCSVButton_clicked();
+
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -50,8 +57,9 @@ private:
     QStringList devList;
 
     //Array de dados
-    QVector<double> emgData;
-    QVector<double> timestamp;
+    QStringList saveToCSV;
+    QList <double> emgVoltage; // salva o valor da tensão lido
+    QList <double> saveTimeStamp; // guarda o valor do tempo
 
     void sendSerialCommand(QString);
     void updateConnectionStatus();
