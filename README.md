@@ -4,22 +4,31 @@ Projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar n
 ## Índice
 
 <ol align="left">
-  <li><a href="#10-objetivo">Objetivo</a></li>
-  <li><a href="#20-proposta-de-solução">Proposta de solução</a></li>
-  <li><a href="#30-desenvolvimento">Desenvolvimento</a>
+  <li><a href="#introdução">Introdução</a></li>
+  <li><a href="#objetivo">Objetivo</a></li>
+  <li><a href="#20-instrumentação-e-modelagem">Instrumentação e modelagem</a>
     <ol>
-      <li><a href="#31-arduino-uno">Arduino uno</a></li>
-      <li><a href="#32-placa-de-circuito-impresso">Placa de circuito impresso</a></li>
-      <li><a href="#interface">Interface</a></li>
+      <li><a href="#21-estágio-diferencial">Estágio diferencial</a></li>
+      <li><a href="#22-estágio-de-filtragem">Estágio de filtragem</a></li>
+      <li><a href="#23-estágio-de-amplificação-e-retificação">Estágio de amplificação e retificação</a></li>
     </ol>
   </li>
-  <li><a href="#40-lista-de-materiais">Lista de materiais</a>
+  <li><a href="#lista-de-materiais">Lista de materiais</a>
     <ol>
-      <li><a href="#41-softwares-de-simulação">Softwares de simulação</a></li>
+      <li><a href="#softwares-de-simulação">Hardware</a></li>
+      <li><a href="#softwares-de-simulação">Softwares</a></li>
     </ol>
   </li>
-  <li><a href="#50-referências">Referências</a></li>
+  <li><a href="#orçamento-do-projeto">Orçamento do projeto</a></li>
+  <li><a href="#referências">Referências</a></li>
+  <li><a href="#melhorias-e-ideias">Melhorias e ideias</a></li>
+
 </ol>
+
+## Introdução
+<!-- Falar um pouco sobre a aplicação -->
+<!-- Falar a sequência de passos utilizados para desenvolver o projeto -->
+
 
 ## Objetivo
 <!-- Descrição simples sobre -->
@@ -112,11 +121,15 @@ A interface foi desenvolvida utilizando a ferramenta [Qt](https://www.qt.io/) e 
   <img width="500px" src=".github/real_time_plot_v1.gif">
 </p>
 
-## Sistema de controle
+## Sistema de corrida
 <!-- Descrição do controle do carro -->
 
+Para esta primeira versão do sistema desenvolvido neste projeto, tem-se suporte para apenas 1 jogador, já que na especificação indica que o sistema deve possuir até 4 jogadores. Entretando, esta limitação pode ser removida com melhorias futuras.
 
-## Lista de Materiais
+Foi utilizado um arduino uno para simular o controle do motor que irá tracionar o carro de brinquedo. O controle desenvolvido para a ativação do motor é simples, a velocidade será proporcional a tensão lida pelo microcontrolador. 
+
+
+## Lista de Materiais e serviços
 
 ### Hardware
 
@@ -128,9 +141,18 @@ A interface foi desenvolvida utilizando a ferramenta [Qt](https://www.qt.io/) e 
 	* 33k - 1 unidade . 
 * Potenciômetro de 100k - 1 unidade;
 * Capacitor de 10nF - 1 unidade;
-* Arduino uno - 1 unidade;
-* ESP01 - 1 unidade;
-* Fonte de alimentação simétrica +-5V;
+* Arduino nano - 1 unidade;
+<!-- ou arduino nano, por ser mais prático -->
+* **Eletrodo utilizado**:
+<!-- Justificar a escolha do eletródo, usar como base o livro de instrumentação -->
+* [Max1044/icl7660](https://datasheets.maximintegrated.com/en/ds/ICL7660-MAX1044.pdf): um conversor de tensão para -5V, este componente simplificará o circuito final para a alimentação simétrica dos estágios com amplificadores.
+
+* Diodo [D1N4007]() : 
+ <!-- razão de ter escolhido este diodo  -->
+
+* [L293D](): é o módulo da ponte H, necessária para controle do motor DC.
+
+* Bateria 9V: 
 
 
 ### Software
@@ -143,6 +165,29 @@ A interface foi desenvolvida utilizando a ferramenta [Qt](https://www.qt.io/) e 
 
 
 ## Orçamento do projeto
+
+Na lista abaixo contém todos os componentes utilizados e o respectivo preço. É importante que os itens da lista são vendidos no Brasil e, para fazer uma breve comparação, também é apresentado uma lista com o preço dos mesmos componentes disponíveis no mercado internacional. Deste modo dependendo da urgência/verba disponível para a construção do protótipo, pode-se escolher a melhor alternativa.
+
+1. Max1044/icl7660 - R$ [49,90](https://produto.mercadolivre.com.br/MLB-1743219833-max1044icl7660-switched-capacitor-voltage-converters-5-pcs-_JM#position=5&type=item&tracking_id=fe80bb47-8e29-429a-8a61-f6f3be3a011d) (pelo mercado livre)
+
+2. LM324 x 2
+
+3. Resistores x *n* (quantidade de resistores)
+
+4. Capacitores x *n* (quantidade de capacitores)
+
+5. Impressão da placa
+
+6. Arduino nano - RS [31,90](https://www.robocore.net/placa-arduino/placa-nano-v3-com-cabo-usb-para-arduino?gclid=Cj0KCQiAv6yCBhCLARIsABqJTjYw68xsy4khcI4-SAYwE8Emp7A2HrOhB0R6kJR8ZRxTo6YxT30KngkaAg1aEALw_wcB)
+
+<p><strong>Total: </strong>R$ <span style="color: green">100,00 </span></p>
+
+
+Optando por comprar no mercado internacional tem-se:
+
+
+
+<p>Total: R$ <span style="color: green">100,00 </span></p>
 
 
 
