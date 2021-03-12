@@ -13,10 +13,10 @@ Projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar n
       <li><a href="#23-estágio-de-amplificação-e-retificação">Estágio de amplificação e retificação</a></li>
     </ol>
   </li>
-  <li><a href="#lista-de-materiais">Lista de materiais</a>
+  <li><a href="#lista-de-materiais-e-serviços">Lista de materiais e serviços</a>
     <ol>
-      <li><a href="#softwares-de-simulação">Hardware</a></li>
-      <li><a href="#softwares-de-simulação">Softwares</a></li>
+      <li><a href="#hardware">Hardware</a></li>
+      <li><a href="#softwares">Softwares</a></li>
     </ol>
   </li>
   <li><a href="#orçamento-do-projeto">Orçamento do projeto</a></li>
@@ -124,10 +124,30 @@ A interface foi desenvolvida utilizando a ferramenta [Qt](https://www.qt.io/) e 
 ## Sistema de corrida
 <!-- Descrição do controle do carro -->
 
-Para esta primeira versão do sistema desenvolvido neste projeto, tem-se suporte para apenas 1 jogador, já que na especificação indica que o sistema deve possuir até 4 jogadores. Entretando, esta limitação pode ser removida com melhorias futuras.
+Para esta primeira versão do sistema desenvolvido neste projeto, tem-se suporte para apenas 1 jogador, já que na especificação indica que o sistema deve possuir até 4 jogadores. Entretando, esta limitação pode ser removida com melhorias futuras. Outro ponto importante é que priorizou-se utilizar materiais de fácil acesso, de modo fosse possível reaproveitar materiais recicláveis.
 
-Foi utilizado um arduino uno para simular o controle do motor que irá tracionar o carro de brinquedo. O controle desenvolvido para a ativação do motor é simples, a velocidade será proporcional a tensão lida pelo microcontrolador. 
+Foi utilizado um arduino uno para simular o controlador do sistema e um motor DC responsável por tracionar o carro de brinquedo. O [controle](./car_controller/car_controller.ino) desenvolvido para a ativação do motor é simples, a velocidade será proporcional a tensão lida pelo arduino. O arduino uno possui 10 bits de resolução, então os valores são convertidos entre 0 e 1023. Já a velocidade do motor DC é controlada por meio de um pulso PWM, cujo o duty cycle varia de 0 a 255, representando 0 a 100%.  
 
+<p align="center">
+  <img width="350px" src=".github/motor_circuit.png">
+  <img height="210px" src=".github/real_circuit.jpg">
+  <br>
+  <p align="center">Figura A. Circuito para controle do motor: esquemático e testado (Fonte: <a href="https://www.arduinoecia.com.br/controle-de-motor-dc-com-o-l293d-ponte-h/">Arduino e Cia</a>).</p>
+</p>
+<br>
+
+Já em relação ao ambiente/pista de corrida, optou-se por utilizar uma impressora, como pode-se observar na figura abaixo. A motivação da escolha parte da ideia de reciclagem, além disso a mecânica da estrutura permite a mesma dinâmica propocionada por jogos *drag racing*. Em paralelo ao motor tem-se um sensor ultra sônico para frenagem do carrinho quando este se aproximar na "linha de chegada".
+Por fim o carro de brinquedo é anexado na superfície que é controlada pelo motor. 
+
+<p align="center">
+  <img height="350px" src=".github/usar1.jpg">
+  <img height="350px" src=".github/usar_2.jpg">
+  <img height="350px" src=".github/usar_3.jpg">
+  <br>
+  <p align="center">Figura X. Estrutura da pista</p>
+</p>
+
+É importante destacar que esta abordagem via corrida de carrinho é uma forma interessante de analisar o quadro de evolução do paciente. 
 
 ## Lista de Materiais e serviços
 
@@ -155,7 +175,8 @@ Foi utilizado um arduino uno para simular o controle do motor que irá tracionar
 * Bateria 9V: 
 
 
-### Software
+### Softwares
+[voltar para índice](#índice) 
 
 * [PSpice](https://www.electronics-lab.com/downloads/circutedesignsimulation/?page=5). Neste projeto foi utilizado este software de simulação por ser gratuito, utilizado em meio acadêmico, disponível para estudantes e devido a familiariadade do projetista com a ferramenta. Embora este software seja uma ótima ferramenta de simulação, a versão para estudante apresenta limitações na complexidade do circuito, então é importante destacar que **as simulações foram realizadas separadamente para cara bloco ou módulo do circuito proposto.**
 
