@@ -165,16 +165,38 @@ A partir deste momento o valor de R ou C deve ser arbitrário, então escolhendo
 ```
 
 Então o capacitor será de 470nF, já que é o capacitor comercial mais próximo.
+Por fim, para que a condição de *k*<span style="font-size: 12px; font-style:italic">c</span> = 1 seja satisfeita, a constante Q deve estar no intervalo: 0.577 < Q <= 0.707 . O valor de Q é obtido por:
 
+```
+Q = 1/(3 - Av)
+# Av é obtido por:
+Av = (R2/R1) + 1
 
+# Logo: 
+=> Av >= -1/0.707 + 3
+=> Av = 1.58557
+
+# Assim
+R2/R1 = 0.58557
+R2 = 0.58557*R1
+```
+
+Escolhendo R1 arbitrariamente igual a 18k Ohms, R2 = 10.5k Ohms, logo R2 = 10k Ohms.
+
+**Passa-baixas**
+
+Analogamente para o filtro passa-baixas aprensenta os mesmos passos:
+
+<p align="center">
+  <img width="400px" src=".github/low_pass_filter.png">
+  <p align="center">Figura L. Filtro passa-baixas Sallen-Key (Fonte: <a href="#referências">Malvino</a>, página 822)</p>
+</p>
 
 **Simulação**
 
 <p align="center">
   <img width="500px" src=".github/filter_output.png">
 </p>
-
-
 
 
 
