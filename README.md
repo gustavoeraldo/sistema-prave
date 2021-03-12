@@ -13,6 +13,8 @@ Projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar n
       <li><a href="#23-estágio-de-amplificação-e-retificação">Estágio de amplificação e retificação</a></li>
     </ol>
   </li>
+  <li><a href="#interface-gráfica">Interface gráfica</a></li>
+  <li><a href="#sistema-de-corrida">Sistema de corrida</a></li>
   <li><a href="#lista-de-materiais-e-serviços">Lista de materiais e serviços</a>
     <ol>
       <li><a href="#hardware">Hardware</a></li>
@@ -30,6 +32,8 @@ Projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar n
 <!-- Falar a sequência de passos utilizados para desenvolver o projeto -->
 <!-- Diagrama de blocos de todo o sistema/projeto (uma visão geral) -->
 
+Em sequência é apresentada a lista de materiais e serviços necessários para o desenvolvimento da solução proposta. Vale ressaltar que na listagem de materiais encontram-se o hardware e softwares utilizados, **juntamente com a justificativa da escolha de cada item**. 
+
 ## Objetivo
 <!-- Descrição simples sobre -->
 
@@ -45,6 +49,7 @@ O circuito desenvolvido é composto por quatro módulos, sendo estes o módulo d
 </p>
 
 ### 2.1 Estágio diferencial
+<!-- adicionar mais informações sobre esse circuito e o porquê de utilizá-lo -->
 Na construção do circuito que fará a medição de biopotenciais é necessário atentar-se as questões de segurança dos pacientes,    
 
 Para a construção deste estágio foi utilizada a configuração do amplificador de instrumentação, já que este tipo de amplificador diferencial permite:
@@ -101,7 +106,9 @@ Av(CM) = +-2 * (delta_R/R)
 
 ### 2.2 Estágio de filtragem
 
-Para reduzir a presença de ruídos na aquisição do EMG, foi necessário realizar a construção de um módulo de filtragem. Como os sinais de EMG apresentam frequências entre 20 e 500Hz (Adicionar referências)
+Para reduzir a presença de ruídos na aquisição do EMG, foi necessário realizar a construção de um módulo de filtragem. Como os sinais de EMG apresentam frequências entre 20 e 500Hz (Adicionar referências).
+
+Como o objetivo é construir um filtro passa-faixa, dentre as possíveis configurações existentes optou-se por utilizar um passa-altas e passa-baixas em sequência. Isto é um fator facilitador quando a faixa de banda é específica, pois basta projetar a frequência de corte para cada estágio. 
 
 <p align="center">
   <img width="500px" src=".github/band_pass_filter.png">
@@ -109,12 +116,67 @@ Para reduzir a presença de ruídos na aquisição do EMG, foi necessário reali
 <!-- Descrever as características da tensão de entrada
   Mostrar os cálculos
   Colocar referências (OpenHardware)
+  [ ] - Mostrar tensão de entrada
  -->
-Simulação
+
+O primeiro estágio deste módulo é um filtro passa-altas Sallen-Key de componentes iguais ([Malvino](#referências), página 826). Essa configuração foi escolhida devido a simplificação na seleção dos valores de cada componente.
+
+<p align="center">
+  <img width="400px" src=".github/high_pass_c.png">
+  <p align="center">Figura L. Filtro passa-altas Sallen-Key (Fonte: <a href="#referências">Malvino</a>, página 827)</p>
+</p>
+
+**Modelagem**
+
+O filtro passa-altas precisa ter uma frequência de corte de 20Hz, então a escolha dos componentes partirão a partir da definição de algumas constantes:
+
+* Q: Constante que define a aproximação da frequência de corte. 
+
+* Fp: frequência de polo
+
+* Fc: frequência de corte
+
+* Av: ganho do circuito
+
+* *k*<span style="font-size: 12px; font-style:italic">c</span>: constantes estabelecidas por simplificações realizadas por Butterworth, Bessel e Chebyshev com base na amplitude da ondulação de estágios de segunda ordem ([Malvino](#referências), página 815 vol. 2).
+
+Tendo isto em vista, para facilitar os cálculos, dado que:
+
+```
+fc = fp/kc
+```
+
+* Deseja-se que *f*<span style="font-size: 12px; font-style:italic">c</span> = *f*<span style="font-size: 12px; font-style:italic">p</span>. Portanto, com base na tabela *k*<span style="font-size: 12px; font-style:italic">c</span> = 1. Entãp *f*<span style="font-size: 12px; font-style:italic">c</span> = *f*<span style="font-size: 12px; font-style:italic">p</span> = 20Hz.
+
+A partir disto pode-se encontrar o resistor **R** e do capacitor **C** pela equação:
+
+```
+=> fp = 1/(2*pi*R*C)
+=> 20 = 1/(2*pi*R*C)
+=> RC = 1/(40*pi)
+=> RC = 0.007957747
+```
+
+A partir deste momento o valor de R ou C deve ser arbitrário, então escolhendo R = 15k Ohms, tem-se que:
+
+```
+=> C = 0.007957747/15k
+=> C = 531nF 
+```
+
+Então o capacitor será de 470nF, já que é o capacitor comercial mais próximo.
+
+
+
+**Simulação**
 
 <p align="center">
   <img width="500px" src=".github/filter_output.png">
 </p>
+
+
+
+
 
 ### 2.3 Estágio de amplificação e retificação
 
@@ -152,7 +214,7 @@ A interface foi desenvolvida utilizando a ferramenta [Qt](https://www.qt.io/) e 
 ## Sistema de corrida
 <!-- Descrição do controle do carro -->
 
-Para esta primeira versão do sistema desenvolvido neste projeto, tem-se suporte para apenas 1 jogador, já que na especificação indica que o sistema deve possuir até 4 jogadores. Entretando, esta limitação pode ser removida com melhorias futuras. Outro ponto importante é que priorizou-se utilizar materiais de fácil acesso, de modo fosse possível reaproveitar materiais recicláveis.
+Para esta primeira versão do sistema desenvolvido neste projeto, tem-se suporte para apenas 1 jogador, já que na especificação indica que o sistema deve possuir até 4 jogadores. Entretando, esta limitação pode ser removida com melhorias futuras. Outro ponto importante é que priorizou-se utilizar materiais de fácil acesso, de modo que fosse possível reaproveitar materiais recicláveis.
 
 Foi utilizado um arduino uno para simular o controlador do sistema e um motor DC responsável por tracionar o carro de brinquedo. O [controle](./car_controller/car_controller.ino) desenvolvido para a ativação do motor é simples, a velocidade será proporcional a tensão lida pelo arduino. O arduino uno possui 10 bits de resolução, então os valores são convertidos entre 0 e 1023. Já a velocidade do motor DC é controlada por meio de um pulso PWM, cujo o duty cycle varia de 0 a 255, representando 0 a 100%.  
 
