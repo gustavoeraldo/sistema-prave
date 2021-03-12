@@ -1,0 +1,23 @@
+* C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\band_pass_filter.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Mar 09 11:08:56 2021
+
+
+
+** Analysis setup **
+.tran 0ns 100ms 0 1m
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "band_pass_filter.net"
+.INC "band_pass_filter.als"
+
+
+.probe
+
+
+.END

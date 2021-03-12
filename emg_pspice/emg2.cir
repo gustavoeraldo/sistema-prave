@@ -1,0 +1,24 @@
+* C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\emg2.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Mar 09 23:40:24 2021
+
+
+
+** Analysis setup **
+.tran 0ns 50ms 0 1m
+.OP 
+.STMLIB "emg2.stl"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "emg2.net"
+.INC "emg2.als"
+
+
+.probe
+
+
+.END

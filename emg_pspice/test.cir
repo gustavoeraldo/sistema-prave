@@ -1,0 +1,23 @@
+* C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\test.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Mar 07 15:53:08 2021
+
+
+
+** Analysis setup **
+.tran 0ns 50ms 0 1m
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "test.sub"
+.INC "test.als"
+
+
+.probe
+
+
+.END

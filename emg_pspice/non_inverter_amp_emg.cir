@@ -1,0 +1,23 @@
+* C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\non_inverter_amp_emg.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Fri Mar 12 12:37:15 2021
+
+
+
+** Analysis setup **
+.tran 0ns 50ms 0 1ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "non_inverter_amp_emg.net"
+.INC "non_inverter_amp_emg.als"
+
+
+.probe
+
+
+.END

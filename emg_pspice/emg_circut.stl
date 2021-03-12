@@ -1,0 +1,6 @@
+* "C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\emg_circut.stl" written on Sun 17:10:18 03/07/21
+* by Schematic Editor, Version 9.1
+.STIMULUS -5V STIM (1, 1)
++   +0s Z
+.STIMULUS +5V STIM (1, 1)
++   +0s Z
