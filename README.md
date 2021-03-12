@@ -28,14 +28,15 @@ Projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar n
 ## Introdução
 <!-- Falar um pouco sobre a aplicação -->
 <!-- Falar a sequência de passos utilizados para desenvolver o projeto -->
-
+<!-- Diagrama de blocos de todo o sistema/projeto (uma visão geral) -->
 
 ## Objetivo
 <!-- Descrição simples sobre -->
 
 ## 2.0 Instrumentação e modelagem
+[voltar para o índice](#índice)
 <!-- Mostrar cálculos e simulações -->
-Para realizar a medição de biopotenciais é necessário realizar uma amplificação do sinal, já que a amplitude da resposta elétrica varia uV e mV, na medição de EMG é em torno de 1mV~10mV(Referência: Livro de Instrumentação, pg). 
+Para realizar a medição de biopotenciais é necessário realizar uma amplificação do sinal, já que a ordem da resposta elétrica varia entre uV e mV. Na medição de EMG é em torno de 1mV~10mV (Referência: Livro de Instrumentação, pg). 
 
 O circuito desenvolvido é composto por quatro módulos, sendo estes o módulo diferencial, filtragem do sinal, amplificação e retificação do sinal, como é possível observar no diagrama abaixo.
 
@@ -56,19 +57,46 @@ Para a construção deste estágio foi utilizada a configuração do amplificado
   <img width="400px" src=".github/amp_dif.png">
 </p>
 
-Simulação do circuito
+**Simulação do circuito**
 
-Tensão de entrada
-<p align="center">
-  <img width="400px" src=".github/amp_dif_input.png">
-</p>
-
-
-Saída do estaǵio diferencial
+Para caracterizar os impulsos elétricos de entrada do circuito, utilizou-se um sinal senoidal com frequência de 100Hz e amplitude de 10mV e 5mV para V1 e V2 respectivamente, como é possível observar na figura seguinte.
 
 <p align="center">
-  <img width="400px" src=".github/output_amp_dif.png">
+  <img width="500px" src=".github/amp_dif_input.png">
+  <p align="center">Figura K. Entrada diferencial do circuito</p>
 </p>
+
+**Saída do estaǵio diferencial**
+
+Na imagem abaixo observa-se o comportamento esperado, visto que a diferença entre V1 e V2 é de 5mV, e o ganho do estágio de pré-amplificação é de 101, resultando asim uma saída é levemente superior a 500mV. 
+<!-- mudar esse ganho -->
+
+<p align="center">
+  <img width="500px" src=".github/output_amp_dif.png">
+</p>
+
+**Cálculo**
+
+Como este módulo possui inicialmente um estágio de amplificação com a configuração não inversora, então o ganho deste estágio é representado pela seguinte equação:
+
+```
+Av = (R5/R6) + 1 
+```
+Então, tem-se que:
+```
+Av = (R5/R6) + 1
+# Lembrando que R5 = R8 e R6 = R7
+Av = (100k/1k) + 1
+Av = 101 
+
+# e Av(CM) = 1
+```
+
+Por fim, no estágio do amplificador diferencial, o ganho Av = -1, devido ao casamento de impedância dos resistores R1, R2, R3 e R4. Já o Av(CM) dependerá da precisão dos resistores:
+
+```
+Av(CM) = +-2 * (delta_R/R)
+```
 
 
 ### 2.2 Estágio de filtragem
@@ -118,7 +146,7 @@ A interface recebe informações enviadas pelo arduino uno via comunicação ser
 A interface foi desenvolvida utilizando a ferramenta [Qt](https://www.qt.io/) e os motivos que levaram a escolha deste software estão descritas na seção de [Lista de Materiais](#Software). 
 
 <p align="center">
-  <img width="500px" src=".github/real_time_plot_v1.gif">
+  <img width="700px" src=".github/real_time_plot_v1.gif">
 </p>
 
 ## Sistema de corrida
