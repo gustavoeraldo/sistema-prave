@@ -46,6 +46,7 @@ O circuito desenvolvido é composto por quatro módulos, sendo estes o módulo d
 
 <p align="center">
   <img width="500px" src=".github/diagrama_circuito-Page-1.png">
+   <p align="center">Figura L. Diagrama do circuito</p>
 </p>
 
 ### 2.1 Estágio diferencial
@@ -58,8 +59,10 @@ Para a construção deste estágio foi utilizada a configuração do amplificado
 - Grande common mode rejection ratio (CMRR): aumenta a precisão ou ;
 - Alta impedância de entrada, evitando o fluxo de altas correntes;
 
+<!-- O GANHO NESSE ESTÁGIO DEVE SER DE 2.2 -->
 <p align="center">
   <img width="400px" src=".github/amp_dif.png">
+   <p align="center">Figura L. Estágio de pré-amplificação e diferencial</p>
 </p>
 
 **Simulação do circuito**
@@ -112,6 +115,7 @@ Como o objetivo é construir um filtro passa-faixa, dentre as possíveis configu
 
 <p align="center">
   <img width="500px" src=".github/band_pass_filter.png">
+  <p align="center">Figura O. Filtro passa-faixa</p>
 </p>
 <!-- Descrever as características da tensão de entrada
   Mostrar os cálculos
@@ -194,15 +198,16 @@ Analogamente para o filtro passa-baixas aprensenta os mesmos passos:
 
 **Simulação**
 
+Na imagem abaixo é apresentado a saída do filtro passa-altas e passa-baixas caracterizados pela senoidal vermerlha e verde respectivamente. Certamente o sinal no final do estágio tem amplitude levemente maior devido ao ganho de 1.5 aproximadamente. Além disso o sinal não sofre deformações dentro da faixa de operação estabelecida.
+
 <p align="center">
   <img width="500px" src=".github/filter_output.png">
 </p>
 
 
-
 ### 2.3 Estágio de amplificação e retificação
 
-Neste estágio realiza-se a amplificação final do sinal juntamente com a retificação deste, visto que o sinal será convertido para um sinal digital. Além disso, este estágio permite ajuste do ganho, tendo então um valor entre 47 e 147 proximadamente.
+Neste estágio realiza-se a amplificação final do sinal juntamente com a retificação deste, visto que o sinal será convertido para um sinal digital. Além disso, este estágio permite ajuste do ganho, tendo então um valor entre 47 e 147 proximadamente concretizando um ganho máximo de 750 ou 57.2 db.
 
 <p align="center">
   <img width="500px" src=".github/amplifier_circuit.png">
@@ -214,11 +219,33 @@ Neste estágio realiza-se a amplificação final do sinal juntamente com a retif
   <img width="500px" src=".github/amplifier_simulation.png">
 </p>
 
-**Cálculo do ganho e retificação**
+**Modelagem**
+
+Para obter o ganho descrido anteriormente, basta ecolher arbitrariamente um dos resistores R1 ou R2. Lembrando que R2 = R2' + R3.
 
 ```
-Av = R/R1 + 1
+Av = R2/R1 + 1
 ```
+
+Partindo de Av(total) = 750, porém com os estágios anteriores apresentam um total de 5.1, pois:
+
+```
+2.2 * ~1.5 * ~1.5 = 5.1
+
+# então Av no último estágio deve ser de:
+=> Av = 750/5.1
+=> Av = 147
+```
+
+Por fim, calcula-se R2: 
+
+```
+=> R2 = (147-1)*1k
+=> R2 = 146k Ohms
+```
+Por fim utilizando um potenciômetro de 100k Ohms e um resistor de 47k Ohms , é obtido um valor próximo ao desejado.
+
+**Retificação**
 
 ## Interface gráfica 
 <!-- Demonstrar o funcionamento da interface -->
