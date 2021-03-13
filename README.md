@@ -27,15 +27,18 @@ No projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxila
 
 </ol>
 
-## Introdução
+## 1.0 Introdução
 <!-- Falar um pouco sobre a aplicação -->
 <!-- Falar a sequência de passos utilizados para desenvolver o projeto -->
 <!-- Diagrama de blocos de todo o sistema/projeto (uma visão geral) -->
 
-Em sequência é apresentada a lista de materiais e serviços necessários para o desenvolvimento da solução proposta. Vale ressaltar que na listagem de materiais encontram-se o hardware e softwares utilizados, **juntamente com a justificativa da escolha de cada item**. 
+É apresentada a lista de materiais e serviços necessários para o desenvolvimento da solução proposta. Vale ressaltar que na listagem de materiais encontram-se o hardware e softwares utilizados, juntamente com a justificativa da escolha de cada item. 
 
-## 1.0 Objetivo
-<!-- Descrição simples sobre -->
+Neste projeto a sequência de desenvolvimento foi dada por:
+
+1. Modelagem e simulação do circuito
+2. Desenvolvimento da interface gráfica
+3. Sistema para controle dos carrinhos para efetuar o funcionamento da corrida
 
 ## 2.0 Instrumentação e modelagem
 [voltar para o índice](#índice)
@@ -46,7 +49,7 @@ O circuito desenvolvido é composto por quatro módulos, sendo estes o módulo d
 
 <p align="center">
   <img width="500px" src=".github/diagrama_circuito-Page-1.png">
-   <p align="center">Figura L. Diagrama do circuito</p>
+   <p align="center">Figura 1. Diagrama do circuito</p>
 </p>
 
 ### 2.1 Estágio diferencial
@@ -62,7 +65,7 @@ Para a construção deste estágio foi utilizada a configuração do amplificado
 <!-- O GANHO NESSE ESTÁGIO DEVE SER DE 2.2 -->
 <p align="center">
   <img width="400px" src=".github/amp_dif.png">
-   <p align="center">Figura L. Estágio de pré-amplificação e diferencial</p>
+   <p align="center">Figura 2. Estágio de pré-amplificação e diferencial</p>
 </p>
 
 **Simulação do circuito**
@@ -71,7 +74,7 @@ Para caracterizar os impulsos elétricos de entrada do circuito, utilizou-se um 
 
 <p align="center">
   <img width="500px" src=".github/amp_dif_input.png">
-  <p align="center">Figura K. Entrada diferencial do circuito</p>
+  <p align="center">Figura 3. Entrada diferencial do circuito</p>
 </p>
 
 **Saída do estaǵio diferencial**
@@ -115,7 +118,7 @@ Como o objetivo é construir um filtro passa-faixa, dentre as possíveis configu
 
 <p align="center">
   <img width="500px" src=".github/band_pass_filter.png">
-  <p align="center">Figura O. Filtro passa-faixa</p>
+  <p align="center">Figura 4. Filtro passa-faixa</p>
 </p>
 <!-- Descrever as características da tensão de entrada
   Mostrar os cálculos
@@ -127,7 +130,7 @@ O primeiro estágio deste módulo é um filtro passa-altas Sallen-Key de compone
 
 <p align="center">
   <img width="400px" src=".github/high_pass_c.png">
-  <p align="center">Figura L. Filtro passa-altas Sallen-Key (Fonte: <a href="#referências">Malvino</a>, página 827)</p>
+  <p align="center">Figura 5. Filtro passa-altas Sallen-Key (Fonte: <a href="#referências">Malvino</a>, página 827)</p>
 </p>
 
 **Modelagem**
@@ -193,7 +196,7 @@ Analogamente para o filtro passa-baixas aprensenta os mesmos passos:
 
 <p align="center">
   <img width="400px" src=".github/low_pass_filter.png">
-  <p align="center">Figura L. Filtro passa-baixas Sallen-Key (Fonte: <a href="#referências">Malvino</a>, página 822)</p>
+  <p align="center">Figura 6. Filtro passa-baixas Sallen-Key (Fonte: <a href="#referências">Malvino</a>, página 822)</p>
 </p>
 
 **Simulação**
@@ -237,7 +240,7 @@ Por fim utilizando um potenciômetro de 100k Ohms e um resistor de 47k Ohms , é
 
 <p align="center">
   <img width="500px" src=".github/amplifier_circuit.png">
-  <p align="center">Figura L. Estágio final de amplificação e retificação do sinal</p>
+  <p align="center">Figura 7. Estágio final de amplificação e retificação do sinal</p>
 </p>
 
 
@@ -247,7 +250,7 @@ Por fim, o circuito apresenta um estágio de retificação do sinal como um fitl
 
 <p align="center">
   <img width="500px" src=".github/full_wave_filter.png">
-  <p align="center">Figura L. Filtro de onda completa (Fonte: <a>Malvino</a>, página 105 vol. 1)</p>
+  <p align="center">Figura 8. Filtro de onda completa (Fonte: <a>Malvino</a>, página 105 vol. 1)</p>
 </p>
 
 ```
@@ -266,7 +269,7 @@ Na figura abaixo é apresentado a saída do estágio de amplificação juntament
 
 <p align="center">
   <img width="500px" src=".github/amplifier_simulation.png">
-  <p align="center">Figura L. Simulação do circuito de amplificação</p>
+  <p align="center">Figura 9. Simulação do circuito de amplificação</p>
 </p>
 
 
@@ -295,7 +298,7 @@ Foi utilizado um arduino uno para simular o controlador do sistema e um motor DC
   <img width="350px" src=".github/motor_circuit.png">
   <img height="210px" src=".github/real_circuit.jpg">
   <br>
-  <p align="center">Figura A. Circuito para controle do motor: esquemático e testado (Fonte: <a href="https://www.arduinoecia.com.br/controle-de-motor-dc-com-o-l293d-ponte-h/">Arduino e Cia</a>).</p>
+  <p align="center">Figura 10. Circuito para controle do motor: esquemático e testado (Fonte: <a href="https://www.arduinoecia.com.br/controle-de-motor-dc-com-o-l293d-ponte-h/">Arduino e Cia</a>).</p>
 </p>
 <br>
 
@@ -307,7 +310,7 @@ Por fim o carro de brinquedo é anexado na superfície que é controlada pelo mo
   <img height="350px" src=".github/usar_2.jpg">
   <img height="350px" src=".github/usar_3.jpg">
   <br>
-  <p align="center">Figura X. Estrutura da pista</p>
+  <p align="center">Figura 11. Estrutura da pista</p>
 </p>
 
 É importante destacar que esta abordagem via corrida de carrinho é uma forma interessante de analisar o quadro de evolução do paciente. 
@@ -331,7 +334,7 @@ Por fim o carro de brinquedo é anexado na superfície que é controlada pelo mo
   * 330n - 2 unidades;
   * 10u - 1 unidade.
 * [Arduino uno]() - 1 unidade;
-* [Eletrodo Meditrace]() - 1 unidade
+* [Eletrodo Meditrace]() - 1 unidade:
 <!-- Justificar a escolha do eletródo, usar como base o livro de instrumentação -->
 * [Max1044/icl7660](https://datasheets.maximintegrated.com/en/ds/ICL7660-MAX1044.pdf): um conversor de tensão para -5V, este componente simplificará o circuito final para a alimentação simétrica dos estágios com amplificadores.
 
