@@ -1,4 +1,4 @@
-*version 9.1 1401776764
+*version 9.1 956523680
 u 79
 U? 2
 R? 5
@@ -10,7 +10,7 @@ V? 4
 @analysis
 .TRAN 1 0 0 0
 +0 0ns
-+1 50ms
++1 80ms
 +3 1ms
 @targets
 @attributes
@@ -25,10 +25,10 @@ connectViaLocalLabels 0
 NoStim4ExtIFPortsWarnings 1
 AutoGenStim4ExtIFPorts 1
 @index
-pageloc 1 0 4774 
+pageloc 1 0 4837 
 @status
-n 0 121:02:12:12:37:15;1615563435 e 
-s 2832 121:02:12:12:38:30;1615563510 e 
+n 0 121:02:13:00:01:18;1615604478 e 
+s 0 121:02:13:00:01:18;1615604478 e 
 *page 1 0 970 720 iA
 @ports
 port 14 GND_EARTH 400 160 h
@@ -57,12 +57,6 @@ part 13 VSRC 410 160 v
 a 1 u 0 0 0 0 hcn 100 DC=5
 a 0 a 0:13 0 0 0 hln 100 PKGREF=V3
 a 1 ap 9 0 20 10 hcn 100 REFDES=V3
-part 11 VSIN 290 210 h
-a 1 u 0 0 0 0 hcn 100 VOFF=0
-a 1 u 0 0 0 0 hcn 100 FREQ=200
-a 1 u 0 0 0 0 hcn 100 VAMPL=10m
-a 0 a 0:13 0 0 0 hln 100 PKGREF=V1
-a 1 ap 9 0 20 10 hcn 100 REFDES=V1
 part 7 r 460 240 d
 a 0 u 13 0 15 25 hln 100 VALUE=47k
 a 0 sp 0 0 0 10 hlb 100 PART=r
@@ -83,13 +77,6 @@ a 0 s 0:13 0 0 0 hln 100 PKGTYPE=DIP14
 a 0 s 0:13 0 0 0 hln 100 GATE=A
 a 0 a 0:13 0 0 0 hln 100 PKGREF=U1
 a 0 ap 9 0 56 8 hcn 100 REFDES=U1A
-part 8 r 560 240 d
-a 0 u 13 0 15 25 hln 100 VALUE=18k
-a 0 sp 0 0 0 10 hlb 100 PART=r
-a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
-a 0 s 0:13 0 0 0 hln 100 GATE=
-a 0 a 0:13 0 0 0 hln 100 PKGREF=R4
-a 0 ap 9 0 15 0 hln 100 REFDES=R4
 part 6 c 510 270 v
 a 0 u 13 0 15 30 hln 100 VALUE=10u
 a 0 sp 0 0 0 10 hlb 100 PART=c
@@ -103,15 +90,30 @@ a 0 s 0:13 0 0 0 hln 100 PKGTYPE=DO-41
 a 0 s 0:13 0 0 0 hln 100 GATE=
 a 0 a 0:13 0 0 0 hln 100 PKGREF=D2
 a 0 ap 9 0 17 4 hln 100 REFDES=D2
+part 8 r 560 240 d
+a 0 u 13 0 15 25 hln 100 VALUE=22k
+a 0 sp 0 0 0 10 hlb 100 PART=r
+a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
+a 0 s 0:13 0 0 0 hln 100 GATE=
+a 0 a 0:13 0 0 0 hln 100 PKGREF=R4
+a 0 ap 9 0 15 0 hln 100 REFDES=R4
+part 11 VSIN 290 210 h
+a 1 u 0 0 0 0 hcn 100 VOFF=0
+a 0 a 0:13 0 0 0 hln 100 PKGREF=V1
+a 1 ap 9 0 20 10 hcn 100 REFDES=V1
+a 1 u 0 0 0 0 hcn 100 VAMPL=20m
+a 1 u 0 0 0 0 hcn 100 FREQ=20
 part 1 titleblk 970 720 h
 a 1 s 13 0 350 10 hcn 100 PAGESIZE=A
 a 1 s 13 0 180 60 hcn 100 PAGETITLE=
-a 1 s 13 0 300 95 hrn 100 PAGENO=1
 a 1 s 13 0 340 95 hrn 100 PAGECOUNT=1
+a 1 s 13 0 300 95 hrn 100 PAGENO=1
 part 62 nodeMarker 530 230 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=1
 part 78 nodeMarker 460 230 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=3
 @conn
@@ -199,12 +201,6 @@ j 340 330
 j 360 210
 + p 2 +
 + w 40
-j 290 210
-+ p 11 +
-+ w 40
-j 290 250
-+ p 11 -
-+ w 42
 j 340 330
 + p 3 1
 + w 42
@@ -268,6 +264,12 @@ j 530 230
 j 460 230
 + p 78 pin1
 + w 10
+j 290 210
++ p 11 +
++ w 40
+j 290 250
++ p 11 -
++ w 42
 @attributes
 a 0 s 0:13 0 0 0 hln 100 PAGETITLE=
 a 0 s 0:13 0 0 0 hln 100 PAGENO=1

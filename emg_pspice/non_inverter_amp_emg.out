@@ -1,5 +1,5 @@
 
-**** 03/12/21 12:38:30 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/13/21 00:01:18 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\non_inverter_amp_emg.sch
 
@@ -13,12 +13,12 @@
 
 
 * Schematics Version 9.1 - Web Update 1
-* Fri Mar 12 12:37:15 2021
+* Sat Mar 13 00:01:18 2021
 
 
 
 ** Analysis setup **
-.tran 0ns 50ms 0 1ms
+.tran 0ns 80ms 0 1ms
 .OP 
 
 
@@ -37,14 +37,14 @@
 R_R1         0 $N_0001  1k  
 V_V2         +5V 0 DC 5  
 V_V3         0 -5V DC 5  
-V_V1         $N_0002 0  
-+SIN 0 10m 200 0 0 0
-R_R3         $N_0004 $N_0003  47k  
-R_R2         $N_0003 $N_0001  100k  
-X_U1A         $N_0002 $N_0001 +5V -5V $N_0004 LM324
-R_R4         $N_0005 0  18k  
+R_R3         $N_0003 $N_0002  47k  
+R_R2         $N_0002 $N_0001  100k  
+X_U1A         $N_0004 $N_0001 +5V -5V $N_0003 LM324
 C_C1         0 $N_0005  10u  
-D_D2         $N_0004 $N_0005 D1N4002 
+D_D2         $N_0003 $N_0005 D1N4002 
+R_R4         $N_0005 0  22k  
+V_V1         $N_0004 0  
++SIN 0 20m 20 0 0 0
 
 **** RESUMING non_inverter_amp_emg.cir ****
 .INC "non_inverter_amp_emg.als"
@@ -58,13 +58,13 @@ D_D2         $N_0004 $N_0005 D1N4002
 R_R1            R1(1=0 2=$N_0001 )
 V_V2            V2(+=+5V -=0 )
 V_V3            V3(+=0 -=-5V )
-V_V1            V1(+=$N_0002 -=0 )
-R_R3            R3(1=$N_0004 2=$N_0003 )
-R_R2            R2(1=$N_0003 2=$N_0001 )
-X_U1A           U1A(+=$N_0002 -=$N_0001 V+=+5V V-=-5V OUT=$N_0004 )
-R_R4            R4(1=$N_0005 2=0 )
+R_R3            R3(1=$N_0003 2=$N_0002 )
+R_R2            R2(1=$N_0002 2=$N_0001 )
+X_U1A           U1A(+=$N_0004 -=$N_0001 V+=+5V V-=-5V OUT=$N_0003 )
 C_C1            C1(1=0 2=$N_0005 )
-D_D2            D2(1=$N_0004 2=$N_0005 )
+D_D2            D2(1=$N_0003 2=$N_0005 )
+R_R4            R4(1=$N_0005 2=0 )
+V_V1            V1(+=$N_0004 -=0 )
 _    _(+5V=+5V)
 _    _(-5V=-5V)
 .ENDALIASES
@@ -76,7 +76,7 @@ _    _(-5V=-5V)
 
 .END
 
-**** 03/12/21 12:38:30 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/13/21 00:01:18 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\non_inverter_amp_emg.sch
 
@@ -103,7 +103,7 @@ _    _(-5V=-5V)
            M     .2762                       
 
 
-**** 03/12/21 12:38:30 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/13/21 00:01:18 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\non_inverter_amp_emg.sch
 
@@ -127,7 +127,7 @@ _    _(-5V=-5V)
            D     .52         
 
 
-**** 03/12/21 12:38:30 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/13/21 00:01:18 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\non_inverter_amp_emg.sch
 
@@ -142,15 +142,15 @@ _    _(-5V=-5V)
  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
 
-(  +5V)    5.0000  (  -5V)   -5.0000  ($N_0001)-191.8E-06                       
+(  +5V)    5.0000  (  -5V)   -5.0000  ($N_0001)-192.2E-06                       
 
-($N_0002)    0.0000                   ($N_0003)    -.0239                       
+($N_0002)    -.0239                   ($N_0003)    -.0350                       
 
-($N_0004)    -.0350                   ($N_0005)-126.1E-06                       
+($N_0004)    0.0000                   ($N_0005)-154.3E-06                       
 
-(X_U1A.6) 13.52E-06                   (X_U1A.7)    -.0594                       
+(X_U1A.6) 6.536E-06                   (X_U1A.7)    -.0351                       
 
-(X_U1A.8)    -.0594                   (X_U1A.9)    0.0000                       
+(X_U1A.8)    -.0351                   (X_U1A.9)    0.0000                       
 
 (X_U1A.10)     .6076                  (X_U1A.11)   -4.9602                      
 
@@ -158,7 +158,7 @@ _    _(-5V=-5V)
 
 (X_U1A.14)     .5937                  (X_U1A.53)    3.5000                      
 
-(X_U1A.54)   -4.3500                  (X_U1A.90)    -.4885                      
+(X_U1A.54)   -4.3500                  (X_U1A.90)-244.0E-06                      
 
 (X_U1A.91)   40.0000                  (X_U1A.92)  -40.0000                      
 
@@ -173,17 +173,17 @@ _    _(-5V=-5V)
     V_V2        -1.116E-03
     V_V3        -1.116E-03
     V_V1         4.474E-08
-    X_U1A.vb     1.352E-10
-    X_U1A.vc     3.535E-12
+    X_U1A.vb     6.536E-11
+    X_U1A.vc     3.536E-12
     X_U1A.ve     4.317E-12
-    X_U1A.vlim  -4.885E-04
-    X_U1A.vlp   -4.049E-11
-    X_U1A.vln   -3.952E-11
+    X_U1A.vlim  -2.440E-07
+    X_U1A.vlp   -4.000E-11
+    X_U1A.vln   -4.000E-11
 
     TOTAL POWER DISSIPATION   1.12E-02  WATTS
 
 
-**** 03/12/21 12:38:30 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/13/21 00:01:18 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\non_inverter_amp_emg.sch
 
@@ -202,7 +202,7 @@ _    _(-5V=-5V)
 
 
 NAME         X_U1A.ga    X_U1A.gcm 
-I-SOURCE     3.608E-08   3.622E-08
+I-SOURCE     3.615E-08   3.622E-08
 
 
 **** VOLTAGE-CONTROLLED VOLTAGE SOURCES
@@ -210,22 +210,22 @@ I-SOURCE     3.608E-08   3.622E-08
 
 NAME         X_U1A.egnd
 V-SOURCE     0.000E+00
-I-SOURCE     4.886E-04
+I-SOURCE     2.831E-07
 
 
 **** CURRENT-CONTROLLED CURRENT SOURCES
 
 
 NAME         X_U1A.fb  
-I-SOURCE     2.858E-03
+I-SOURCE     1.397E-03
 
 
 **** CURRENT-CONTROLLED VOLTAGE SOURCES
 
 
 NAME         X_U1A.hlim
-V-SOURCE    -4.885E-01
-I-SOURCE     9.771E-13
+V-SOURCE    -2.440E-04
+I-SOURCE     4.881E-16
 
 
 **** DIODES
@@ -233,9 +233,9 @@ I-SOURCE     9.771E-13
 
 NAME         D_D2        X_U1A.dc    X_U1A.de    X_U1A.dlp   X_U1A.dln 
 MODEL        D1N4002     X_U1A.dx    X_U1A.dx    X_U1A.dx    X_U1A.dx  
-ID          -7.01E-09   -3.54E-12   -4.32E-12   -4.05E-11   -3.95E-11 
-VD          -3.49E-02   -3.54E+00   -4.32E+00   -4.05E+01   -3.95E+01 
-REQ          7.12E+06    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+ID          -7.01E-09   -3.54E-12   -4.32E-12   -4.00E-11   -4.00E-11 
+VD          -3.49E-02   -3.54E+00   -4.32E+00   -4.00E+01   -4.00E+01 
+REQ          7.13E+06    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
 CAP          5.06E-11    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
 
 NAME         X_U1A.dp  
@@ -269,7 +269,7 @@ CBX/CBX2     0.00E+00    0.00E+00
 FT/FT2       4.61E+15    4.59E+15 
 
 
-**** 03/12/21 12:38:30 *********** Evaluation PSpice (Nov 1999) **************
+**** 03/13/21 00:01:18 *********** Evaluation PSpice (Nov 1999) **************
 
  * C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\non_inverter_amp_emg.sch
 
@@ -286,9 +286,9 @@ FT/FT2       4.61E+15    4.59E+15
 
 (  +5V)    5.0000  (  -5V)   -5.0000  ($N_0001)-192.2E-06                       
 
-($N_0002)    0.0000                   ($N_0003)    -.0239                       
+($N_0002)    -.0239                   ($N_0003)    -.0350                       
 
-($N_0004)    -.0350                   ($N_0005)-126.3E-06                       
+($N_0004)    0.0000                   ($N_0005)-154.3E-06                       
 
 (X_U1A.6) 6.536E-06                   (X_U1A.7)    -.0351                       
 
@@ -328,5 +328,5 @@ FT/FT2       4.61E+15    4.59E+15
 
           JOB CONCLUDED
 
-          TOTAL JOB TIME             .05
+          TOTAL JOB TIME             .03
 

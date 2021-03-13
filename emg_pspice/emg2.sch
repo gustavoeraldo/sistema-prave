@@ -1,10 +1,10 @@
-*version 9.1 3853382
-u 274
+*version 9.1 679377834
+u 278
 U? 4
 HB? 5
 R? 13
 V? 13
-? 21
+? 23
 @libraries
 @analysis
 .TRAN 1 0 0 0
@@ -25,10 +25,10 @@ connectViaLocalLabels 0
 NoStim4ExtIFPortsWarnings 1
 AutoGenStim4ExtIFPorts 1
 @index
-pageloc 1 0 7420 
+pageloc 1 0 7744 
 @status
-n 0 121:02:09:23:40:24;1615344024 e 
-s 0 121:02:09:23:46:38;1615344398 e 
+n 0 121:02:12:23:38:31;1615603111 e 
+s 2832 121:02:12:23:39:07;1615603147 e 
 *page 1 0 970 720 iA
 @ports
 port 42 GND_EARTH 330 290 h
@@ -105,20 +105,6 @@ a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
 a 0 s 0:13 0 0 0 hln 100 GATE=
 a 0 a 0:13 0 0 0 hln 100 PKGREF=R3
 a 0 ap 9 0 15 0 hln 100 REFDES=R3
-part 10 r 390 230 v
-a 0 u 13 0 15 35 hln 100 VALUE=100k
-a 0 sp 0 0 0 10 hlb 100 PART=r
-a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
-a 0 s 0:13 0 0 0 hln 100 GATE=
-a 0 a 0:13 0 0 0 hln 100 PKGREF=R5
-a 0 ap 9 0 15 0 hln 100 REFDES=R5
-part 13 r 390 380 v
-a 0 u 13 0 15 35 hln 100 VALUE=100k
-a 0 sp 0 0 0 10 hlb 100 PART=r
-a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
-a 0 s 0:13 0 0 0 hln 100 GATE=
-a 0 a 0:13 0 0 0 hln 100 PKGREF=R8
-a 0 ap 9 0 15 0 hln 100 REFDES=R8
 part 236 VSIN 250 370 h
 a 1 u 0 0 0 0 hcn 100 FREQ=100
 a 1 u 0 0 0 0 hcn 100 VOFF=0
@@ -137,6 +123,20 @@ a 0 s 0:13 0 0 0 hln 100 PKGTYPE=DIP14
 a 0 s 0:13 0 0 0 hln 100 GATE=A
 a 0 a 0:13 0 0 0 hln 100 PKGREF=U3
 a 0 ap 9 0 56 8 hcn 100 REFDES=U3A
+part 10 r 390 230 v
+a 0 u 13 0 15 35 hln 100 VALUE=2.2k
+a 0 sp 0 0 0 10 hlb 100 PART=r
+a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
+a 0 s 0:13 0 0 0 hln 100 GATE=
+a 0 a 0:13 0 0 0 hln 100 PKGREF=R5
+a 0 ap 9 0 15 0 hln 100 REFDES=R5
+part 13 r 390 380 v
+a 0 u 13 0 15 35 hln 100 VALUE=2.2k
+a 0 sp 0 0 0 10 hlb 100 PART=r
+a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
+a 0 s 0:13 0 0 0 hln 100 GATE=
+a 0 a 0:13 0 0 0 hln 100 PKGREF=R8
+a 0 ap 9 0 15 0 hln 100 REFDES=R8
 part 1 titleblk 970 720 h
 a 1 s 13 0 350 10 hcn 100 PAGESIZE=A
 a 1 s 13 0 180 60 hcn 100 PAGETITLE=
@@ -144,7 +144,14 @@ a 1 s 13 0 340 95 hrn 100 PAGECOUNT=1
 a 1 s 13 0 300 95 hrn 100 PAGENO=1
 part 273 nodeMarker 560 250 h
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=20
+part 274 nodeMarker 280 170 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
+a 0 a 0 0 4 22 hlb 100 LABEL=21
+part 276 nodeMarker 280 370 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
+a 0 a 0 0 4 22 hlb 100 LABEL=22
 @conn
 w 15
 a 0 up 0:33 0 0 0 hln 100 V=
@@ -240,12 +247,14 @@ s 560 310 560 250 66
 a 0 up 33 0 562 280 hlt 100 V=
 w 74
 a 0 up 0:33 0 0 0 hln 100 V=
-s 240 170 300 170 270
+s 240 170 280 170 270
 a 0 up 33 0 270 169 hct 100 V=
+s 280 170 300 170 275
 w 76
 a 0 up 0:33 0 0 0 hln 100 V=
-s 250 370 290 370 272
+s 250 370 280 370 272
 a 0 up 33 0 270 369 hct 100 V=
+s 280 370 290 370 277
 @junction
 j 290 410
 + p 3 -
@@ -391,15 +400,6 @@ j 240 210
 j 250 260
 + w 194
 + w 194
-j 240 210
-+ p 235 -
-+ s 72
-j 240 170
-+ p 235 +
-+ w 74
-j 240 210
-+ p 235 -
-+ w 194
 j 250 410
 + p 236 -
 + s 71
@@ -412,6 +412,21 @@ j 560 250
 j 560 250
 + p 273 pin1
 + w 65
+j 240 210
++ p 235 -
++ s 72
+j 240 170
++ p 235 +
++ w 74
+j 240 210
++ p 235 -
++ w 194
+j 280 170
++ p 274 pin1
++ w 74
+j 280 370
++ p 276 pin1
++ w 76
 @attributes
 a 0 s 0:13 0 0 0 hln 100 PAGETITLE=
 a 0 s 0:13 0 0 0 hln 100 PAGENO=1

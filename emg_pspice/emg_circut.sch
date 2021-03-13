@@ -1,4 +1,4 @@
-*version 9.1 458336102
+*version 9.1 372555374
 u 722
 U? 7
 R? 29
@@ -10,7 +10,7 @@ D? 2
 @analysis
 .TRAN 1 0 0 0
 +0 0ns
-+1 50ms
++1 80ms
 +3 1ms
 .STMLIB emg_circut.stl
 @targets
@@ -26,11 +26,11 @@ connectViaLocalLabels 0
 NoStim4ExtIFPortsWarnings 1
 AutoGenStim4ExtIFPorts 1
 @index
-pageloc 1 0 8938 
+pageloc 1 0 9003 
 @status
-n 0 121:02:10:00:00:23;1615345223 e 
-s 2832 121:02:12:12:49:23;1615564163 e 
-c 121:02:10:00:00:20;1615345220
+n 0 121:02:12:23:46:37;1615603597 e 
+s 0 121:02:12:23:46:37;1615603597 e 
+c 121:02:12:23:46:35;1615603595
 *page 1 0 970 720 iA
 @ports
 port 240 IF_IN 110 120 h
@@ -98,12 +98,6 @@ a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
 a 0 s 0:13 0 0 0 hln 100 GATE=
 a 0 a 0:13 0 0 0 hln 100 PKGREF=R5
 a 0 ap 9 0 15 0 hln 100 REFDES=R5
-part 479 VSIN 70 270 h
-a 1 u 0 0 0 0 hcn 100 FREQ=100
-a 0 a 0:13 0 0 0 hln 100 PKGREF=V11
-a 1 ap 9 0 20 10 hcn 100 REFDES=V11
-a 1 u 0 0 0 0 hcn 100 VOFF=0
-a 1 u 0 0 0 0 hcn 100 VAMPL=0.5
 part 517 c 410 220 h
 a 0 u 13 0 15 25 hln 100 VALUE=330n
 a 0 sp 0 0 0 10 hlb 100 PART=c
@@ -164,16 +158,24 @@ a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
 a 0 s 0:13 0 0 0 hln 100 GATE=
 a 0 a 0:13 0 0 0 hln 100 PKGREF=R28
 a 0 ap 9 0 15 0 hln 100 REFDES=R28
+part 479 VSIN 70 270 h
+a 0 a 0:13 0 0 0 hln 100 PKGREF=V11
+a 1 ap 9 0 20 10 hcn 100 REFDES=V11
+a 1 u 0 0 0 0 hcn 100 VOFF=0
+a 1 u 0 0 0 0 hcn 100 VAMPL=12m
+a 1 u 0 0 0 0 hcn 100 FREQ=1000
 part 1 titleblk 970 720 h
 a 1 s 13 0 350 10 hcn 100 PAGESIZE=A
 a 1 s 13 0 180 60 hcn 100 PAGETITLE=
 a 1 s 13 0 340 95 hrn 100 PAGECOUNT=1
 a 1 s 13 0 300 95 hrn 100 PAGENO=1
 part 491 nodeMarker 260 250 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 s 0 0 0 0 hln 100 PROBEVAR=U2A:OUT
 a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 a 0 0 4 22 hlb 100 LABEL=18
 part 529 nodeMarker 500 270 h
+a 0 s 0 0 0 0 hln 100 PROBEVAR=
 a 0 s 0 0 0 0 hln 100 PROBEVAR=U6A:OUT
 a 0 a 0 0 4 22 hlb 100 LABEL=3
 @conn
@@ -308,9 +310,6 @@ j 240 320
 j 80 240
 + p 33 1
 + w 481
-j 70 270
-+ p 479 +
-+ w 481
 j 120 240
 + p 34 1
 + w 45
@@ -331,9 +330,6 @@ j 170 360
 + w 485
 j 130 360
 + w 485
-+ w 485
-j 70 310
-+ p 479 -
 + w 485
 j 180 240
 + p 3 +
@@ -473,6 +469,12 @@ j 310 260
 j 270 260
 + p 526 1
 + w 60
+j 70 270
++ p 479 +
++ w 481
+j 70 310
++ p 479 -
++ w 485
 @attributes
 a 0 s 0:13 0 0 0 hln 100 PAGETITLE=
 a 0 s 0:13 0 0 0 hln 100 PAGENO=1

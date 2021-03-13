@@ -1,12 +1,12 @@
 * C:\Users\Gustavo\Downloads\UFRN2SEASON\emg_pspice\emg_circut.sch
 
 * Schematics Version 9.1 - Web Update 1
-* Wed Mar 10 00:00:23 2021
+* Fri Mar 12 23:46:37 2021
 
 
 
 ** Analysis setup **
-.tran 0ns 50ms 0 1ms
+.tran 0ns 80ms 0 1ms
 .OP 
 .STMLIB "emg_circut.stl"
 

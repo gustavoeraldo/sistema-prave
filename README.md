@@ -1,5 +1,5 @@
 # sistema-prave
-Projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar na reabilitação de pacientes vítimas de Acidente Vascular Encefálico (AVE). 
+No projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar na reabilitação de pacientes vítimas de Acidente Vascular Encefálico (AVE). 
 
 ## Índice
 
@@ -13,15 +13,15 @@ Projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar n
       <li><a href="#23-estágio-de-amplificação-e-retificação">Estágio de amplificação e retificação</a></li>
     </ol>
   </li>
-  <li><a href="#interface-gráfica">Interface gráfica</a></li>
-  <li><a href="#sistema-de-corrida">Sistema de corrida</a></li>
-  <li><a href="#lista-de-materiais-e-serviços">Lista de materiais e serviços</a>
+  <li><a href="#30-interface-gráfica">Interface gráfica</a></li>
+  <li><a href="#40-sistema-de-corrida">Sistema de corrida</a></li>
+  <li><a href="#50-lista-de-materiais">Lista de materiais</a>
     <ol>
-      <li><a href="#hardware">Hardware</a></li>
-      <li><a href="#softwares">Softwares</a></li>
+      <li><a href="#51-hardware">Hardware</a></li>
+      <li><a href="#52-softwares">Softwares</a></li>
     </ol>
   </li>
-  <li><a href="#orçamento-do-projeto">Orçamento do projeto</a></li>
+  <li><a href="#60-orçamento-do-projeto">Orçamento do projeto</a></li>
   <li><a href="#referências">Referências</a></li>
   <li><a href="#melhorias-e-ideias">Melhorias e ideias</a></li>
 
@@ -34,7 +34,7 @@ Projeto de ingressão no Laboratório LAIS da UFRN, cujo o objetivo é auxilar n
 
 Em sequência é apresentada a lista de materiais e serviços necessários para o desenvolvimento da solução proposta. Vale ressaltar que na listagem de materiais encontram-se o hardware e softwares utilizados, **juntamente com a justificativa da escolha de cada item**. 
 
-## Objetivo
+## 1.0 Objetivo
 <!-- Descrição simples sobre -->
 
 ## 2.0 Instrumentação e modelagem
@@ -271,8 +271,8 @@ Na figura abaixo é apresentado a saída do estágio de amplificação juntament
 
 
 
-## Interface gráfica 
-<!-- Demonstrar o funcionamento da interface -->
+## 3.0 Interface gráfica 
+[voltar para o índice](#índice)
 
 Uma vez que a visualização gráfica é necessária para o profissional de saúde que fará o acompanhamento do paciente, foi desenvolvida uma interface gráfica que permite a visualização em tempo real da resposta muscular do paciente. Além disso, o usuário poderá fazer a exportação de um arquivo .CSV com os dados armazenados da consulta.
 
@@ -284,8 +284,8 @@ A interface foi desenvolvida utilizando a ferramenta [Qt](https://www.qt.io/) e 
   <img width="700px" src=".github/real_time_plot_v1.gif">
 </p>
 
-## Sistema de corrida
-<!-- Descrição do controle do carro -->
+## 4.0 Sistema de corrida
+[voltar para o índice](#índice)
 
 Para esta primeira versão do sistema desenvolvido neste projeto, tem-se suporte para apenas 1 jogador, já que na especificação indica que o sistema deve possuir até 4 jogadores. Entretando, esta limitação pode ser removida com melhorias futuras. Outro ponto importante é que priorizou-se utilizar materiais de fácil acesso, de modo que fosse possível reaproveitar materiais recicláveis.
 
@@ -312,33 +312,40 @@ Por fim o carro de brinquedo é anexado na superfície que é controlada pelo mo
 
 É importante destacar que esta abordagem via corrida de carrinho é uma forma interessante de analisar o quadro de evolução do paciente. 
 
-## Lista de Materiais e serviços
+## 5.0 Lista de Materiais
+[voltar para o índice](#índice)
 
-### Hardware
+### 5.1 Hardware
 
-* Operacional [LM324](https://www.alldatasheet.com/datasheet-pdf/pdf/17871/PHILIPS/LM324.html) - uma unidade contém 4 operacionais;
+* Operacional [LM324](https://www.alldatasheet.com/datasheet-pdf/pdf/17871/PHILIPS/LM324.html) - 2 unidades (uma unidade contem 4 operacionais);
 * Resistores:
-	* 1k - 2 unidades;
-	* 5.6k - 1 unidade;
-	* 9.1k - 1 unidade;
-	* 33k - 1 unidade . 
-* Potenciômetro de 100k - 1 unidade;
-* Capacitor de 10nF - 1 unidade;
-* Arduino nano - 1 unidade;
-<!-- ou arduino nano, por ser mais prático -->
-* **Eletrodo utilizado**:
+	* 1k - 5 unidades;
+	* 2.2k - 2 unidades;
+	* 10k - 6 unidades;
+  * 15k - 2 unidades;
+  * 18k - 3 unidades;
+	* 47k - 1 unidade;
+  * potenciômetro 100k - 1 unidade; 
+* Capacitores:
+  * 470n - 2 unidades;
+  * 330n - 2 unidades;
+  * 10u - 1 unidade.
+* [Arduino uno]() - 1 unidade;
+* [Eletrodo Meditrace]() - 1 unidade
 <!-- Justificar a escolha do eletródo, usar como base o livro de instrumentação -->
 * [Max1044/icl7660](https://datasheets.maximintegrated.com/en/ds/ICL7660-MAX1044.pdf): um conversor de tensão para -5V, este componente simplificará o circuito final para a alimentação simétrica dos estágios com amplificadores.
 
-* Diodo [D1N4007]() : 
+* Diodo [1N4007](https://www.diodes.com/assets/Datasheets/ds28002.pdf) : 
  <!-- razão de ter escolhido este diodo  -->
 
-* [L293D](): é o módulo da ponte H, necessária para controle do motor DC.
+* [L293D](https://www.ti.com/product/L293D?utm_source=google&utm_medium=cpc&utm_campaign=asc-null-null-GPN_EN-cpc-pf-google-wwe&utm_content=L293D&ds_k=L293D+Datasheet&DCM=yes&gclid=Cj0KCQiAv6yCBhCLARIsABqJTjbyCSp6-9STZiHve97iKkTxSuu7bJGU-j3YTwGlzCH-22Rzt1smqeUaAlaZEALw_wcB&gclsrc=aw.ds): é o módulo da ponte H, necessária para controle do motor DC.
 
 * Bateria 9V: 
 
+* Impressora usada.
 
-### Softwares
+
+### 5.2 Softwares
 [voltar para índice](#índice) 
 
 * [PSpice](https://www.electronics-lab.com/downloads/circutedesignsimulation/?page=5). Neste projeto foi utilizado este software de simulação por ser gratuito, utilizado em meio acadêmico, disponível para estudantes e devido a familiariadade do projetista com a ferramenta. Embora este software seja uma ótima ferramenta de simulação, a versão para estudante apresenta limitações na complexidade do circuito, então é importante destacar que **as simulações foram realizadas separadamente para cara bloco ou módulo do circuito proposto.**
@@ -348,44 +355,45 @@ Por fim o carro de brinquedo é anexado na superfície que é controlada pelo mo
 * [Qt](https://www.qt.io/download-open-source?hsCtaTracking=9f6a2170-a938-42df-a8e2-a9f0b1d6cdce%7C6cb0de4f-9bb5-4778-ab02-bfb62735f3e5). Este sofware foi utilizado para criação da interface gráfica. Por apresentar uma versão open source, ser gratúito, permitir funcionamento em multiplas plataformas e uso da linguagem C++, foram as razões consideradas para utilizar esta ferramenta neste projeto.
 
 
-## Orçamento do projeto
+## 6.0 Orçamento do projeto
+[voltar para o índice](#índice)
 
-Na lista abaixo contém todos os componentes utilizados e o respectivo preço. É importante que os itens da lista são vendidos no Brasil e, para fazer uma breve comparação, também é apresentado uma lista com o preço dos mesmos componentes disponíveis no mercado internacional. Deste modo dependendo da urgência/verba disponível para a construção do protótipo, pode-se escolher a melhor alternativa.
+Na lista abaixo contém todos os componentes utilizados e o respectivo preço. É importante que os itens da lista são vendidos no Brasil, o valor do orçamento pode ser menor ao comprar os componentes no mercado internacional, porém deve ser levado em consideração a taxa e o tempo de entrega.
 
-1. Max1044/icl7660 - R$ [49,90](https://produto.mercadolivre.com.br/MLB-1743219833-max1044icl7660-switched-capacitor-voltage-converters-5-pcs-_JM#position=5&type=item&tracking_id=fe80bb47-8e29-429a-8a61-f6f3be3a011d) (pelo mercado livre)
+* Max1044/icl7660 - R$ [49,90](https://produto.mercadolivre.com.br/MLB-1743219833-max1044icl7660-switched-capacitor-voltage-converters-5-pcs-_JM#position=5&type=item&tracking_id=fe80bb47-8e29-429a-8a61-f6f3be3a011d) (pelo mercado livre)
 
-2. LM324 x 2
+* LM324 x 2 - R$ [1,03](https://www.baudaeletronica.com.br/amplificador-operacional-lm324n.html?gclid=Cj0KCQiAv6yCBhCLARIsABqJTjaj0-cOeFcvMY6wGXRT5CoDXeGQX5tLPz7QADpjgCrUA2g8Gtalu8UaAli-EALw_wcB)
 
-3. Resistores x *n* (quantidade de resistores)
+* Resistores - [14,99](https://produto.mercadolivre.com.br/MLB-1015532232-resistores-com-100-pecas-varios-valores-_JM?matt_tool=87716990&matt_word=&matt_source=google&matt_campaign_id=12413740998&matt_ad_group_id=119070072438&matt_match_type=&matt_network=g&matt_device=c&matt_creative=500702333978&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=109997376&matt_product_id=MLB1015532232&matt_product_partition_id=337120033364&matt_target_id=aud-1008379684294:pla-337120033364&gclid=Cj0KCQiAv6yCBhCLARIsABqJTjY92DUYH9Fyz1OgKlSPeCkF38TxOKKuTOIUZQomYxKCjiyug7MAOjcaAs8aEALw_wcB)
 
-4. Capacitores x *n* (quantidade de capacitores)
+* Capacitores - 470n [0,57](https://www.baudaeletronica.com.br/capacitor-de-poliester-470nf-400v.html?gclid=Cj0KCQiAv6yCBhCLARIsABqJTjaj7CKKnigx-DDuqbGECnRDn77l3eBzRDHO9oIkKaxV-wxW_iELqyYaArD1EALw_wcB) + 330n [0,66](https://www.baudaeletronica.com.br/capacitor-de-poliester-330nf-400v.html) + 10u [0,11](https://www.baudaeletronica.com.br/capacitor-eletrolitico-10uf-50v.html)
 
-5. Impressão da placa
+* Diodo - [0,10](https://www.baudaeletronica.com.br/diodo-1n4007.html?gclid=Cj0KCQiAv6yCBhCLARIsABqJTjYCDgML_hwNaYuIrFaIloHfjzkp_tsy6-y5wSCcHSUoQ8jZdiYpPcAaAk6IEALw_wcB)
 
-6. Arduino nano - RS [31,90](https://www.robocore.net/placa-arduino/placa-nano-v3-com-cabo-usb-para-arduino?gclid=Cj0KCQiAv6yCBhCLARIsABqJTjYw68xsy4khcI4-SAYwE8Emp7A2HrOhB0R6kJR8ZRxTo6YxT30KngkaAg1aEALw_wcB)
+* Arduino uno - RS [36,90](https://produto.mercadolivre.com.br/MLB-1685850335-arduino-uno-r3-atmega-328-smd-brinde-cabo-usb-controlador-_JM?matt_tool=87716990&matt_word=&matt_source=google&matt_campaign_id=12413740998&matt_ad_group_id=119070072438&matt_match_type=&matt_network=g&matt_device=c&matt_creative=500702333978&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=269651381&matt_product_id=MLB1685850335&matt_product_partition_id=337120033364&matt_target_id=pla-337120033364&gclid=Cj0KCQiAv6yCBhCLARIsABqJTjarAGW08AR7X66GFX_795KQkRx6gDPH78xPzrcPMloh0N7xLmAlg5saAswKEALw_wcB)
 
-<p><strong>Total: </strong>R$ <span style="color: green">100,00 </span></p>
+* Eletrodo Meditrace - RS [41,18](https://magazinemedica.com.br/produtos/visualiza/sku/344/?gclid=Cj0KCQiAv6yCBhCLARIsABqJTjZzoRbHy1WAj9c4vSvnUQDQzgI5Ux4wIBV78mJrWdSXd9HFd33lOBwaAvqNEALw_wcB)
 
+* L293D - R$ [9,90](https://www.eletrogate.com/ci-l293d-ponte-h-dupla?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&gclid=Cj0KCQiAv6yCBhCLARIsABqJTjZDDQ6rq1UEFUlfdHNBv94UQoLr0GOK0efWcb2YcgKpTYjtdMOl3mkaAtJOEALw_wcB)
 
-Optando por comprar no mercado internacional tem-se:
+* potenciômetro - R$ [1,85](https://www.baudaeletronica.com.br/trimpot-3296x-25-voltas-de-100k-100-000.html)
 
+Assim totaliza-se um **orçamento** de **R$ 144,46**.
 
-
-<p>Total: R$ <span style="color: green">100,00 </span></p>
-
+Vale lembrar que pode ter alterações nos valores, já que a pesquisa foi realizada no dia 12 de março de 2021. Além disso não constado o preço da construção da placa.
+A impressora também não entrou no valor, pois na solução proposta parte da reutilização de impressoras usadas.
 
 
 ## Referências 
+[voltar para o índice](#índice)
 
-[1](#) Ning, Z & Huang, J & Guo, S & Wang, L. (2020). A Portable Potentiostat for Three-Electrode Electrochemical Sensor. Journal of Physics: Conference Series. 1550. 042049. 10.1088/1742-6596/1550/4/042049.<br>
+[1](#) WEBSTER, H. E. J. G.Measurement, Instrumentation, and Sensors Handbook:Electromagnetic, Optical, Radiation, Chemical, and Biomedical Measurement. 2. ed.[S.l.]: CRC Press, 2014. 1921 p. ISBN 1439848912.<br>
 
-[2](#) Crespo, J. R. (2017). Electrochemical-SERS analysis of R6G using a microcontroller based Portable Potentiostat (Doctoral dissertation).<br>
-
-[3](#) WEBSTER, H. E. J. G.Measurement, Instrumentation, and Sensors Handbook:Electromagnetic, Optical, Radiation, Chemical, and Biomedical Measurement. 2. ed.[S.l.]: CRC Press, 2014. 1921 p. ISBN 1439848912.<br>
-
-[4](#) Malvino, Albert Paul; e Bates, David J.; Eletrônica, vol. 1 e vol. 2, 8a ed., Ed. McGraw Hill-Bookman, São Paulo, SP, 2016. Também em recurso eletrônico.
-
+[2](#) Malvino, Albert Paul; e Bates, David J.; Eletrônica, vol. 1 e vol. 2, 8a ed., Ed. McGraw Hill-Bookman, São Paulo, SP, 2016. Também em recurso eletrônico.
 
 
 ## Melhorias e ideias
+[voltar para o índice](#índice)
+
+O projeto é bastante interessante, porém a forma do tratamento ou o jogo em questão proposto poderia ser diferente. [Estudos](https://www.sciencedirect.com/science/article/abs/pii/S1052305718303483?casa_token=R-97Jx682GgAAAAA:IZnYHXFlh8e_eh3uZW-UL4i_5VHIjT2pTD1tI1RbCMPusfvjElP92P3CH62AZ4vg9er7yP-pmKg) mostram que a **música** auxilia no processo de recuperação, então poderia ser feito um jogo como *Guitar Hero* em que o paciente realiza o estímulo muscular de acordo com a melodia, desta forma acredita-se que o desempenho melhorasse. 
 
